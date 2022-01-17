@@ -7,6 +7,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Category View Controller-->
+        <scene sceneID="GnR-E2-2Pg">
+            <objects>
+                <tableViewController id="tzZ-Sw-kRP" customClass="CategoryViewController" customModule="TODO_Udemy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Y2t-bG-2oa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" id="zJZ-VG-mCw">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zJZ-VG-mCw" id="h6v-4Z-mkh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tzZ-Sw-kRP" id="PrQ-fl-Chk"/>
+                            <outlet property="delegate" destination="tzZ-Sw-kRP" id="FgI-iL-jb0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="0YY-Qz-pgm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pX2-Um-SjH">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="0k4-hX-I6K" kind="show" identifier="goToItems" id="gZV-1N-V8V"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Zx-cb-aVr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="159"/>
+        </scene>
         <!--Todo-->
         <scene sceneID="laO-ch-e4o">
             <objects>
@@ -63,12 +99,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="0k4-hX-I6K" kind="relationship" relationship="rootViewController" id="rBb-Mg-BEb"/>
+                        <segue destination="tzZ-Sw-kRP" kind="relationship" relationship="rootViewController" id="Ayy-az-s4Q"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5q-Lr-HaI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046.376811594203" y="159.375"/>
+            <point key="canvasLocation" x="-70" y="159"/>
         </scene>
     </scenes>
     <resources>
