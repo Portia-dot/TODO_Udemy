@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Category View Controller-->
+        <!--Todo-->
         <scene sceneID="GnR-E2-2Pg">
             <objects>
                 <tableViewController id="tzZ-Sw-kRP" customClass="CategoryViewController" customModule="TODO_Udemy" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,9 +30,12 @@
                             <outlet property="delegate" destination="tzZ-Sw-kRP" id="FgI-iL-jb0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="0YY-Qz-pgm">
+                    <navigationItem key="navigationItem" title="Todo" id="0YY-Qz-pgm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pX2-Um-SjH">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="tzZ-Sw-kRP" id="g0Z-gu-nDt"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -43,7 +46,7 @@
             </objects>
             <point key="canvasLocation" x="1025" y="159"/>
         </scene>
-        <!--Todo-->
+        <!--Items-->
         <scene sceneID="laO-ch-e4o">
             <objects>
                 <tableViewController id="0k4-hX-I6K" customClass="TodoListViewController" customModule="TODO_Udemy" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,7 +74,7 @@
                             <outlet property="delegate" destination="0k4-hX-I6K" id="1E0-Ta-L5j"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todo" id="Ugb-2q-7JQ">
+                    <navigationItem key="navigationItem" title="Items" id="Ugb-2q-7JQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DOw-R0-Lgw">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
