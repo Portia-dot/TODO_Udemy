@@ -13,6 +13,11 @@ class TodoListViewController: UITableViewController {
 
     let defualts = UserDefaults.standard
     var itemArray = [Item]()
+    var selectedCategory : CategoryList? {
+        didSet{
+            loadItems()
+        }
+    }
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     //let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -23,7 +28,6 @@ class TodoListViewController: UITableViewController {
 //        if let items = defualts.array(forKey: "TodoListArray") as? [String]{
 //            itemArray = items
 //        }
-        loadItems()
         // Do any additional setup after loading the view.
     }
     
@@ -88,6 +92,8 @@ class TodoListViewController: UITableViewController {
                 //set the done for all item
                 newItem.done = false
                 
+                newItem.parentCarItem = self.selectedCategory
+                
                 self.itemArray.append(newItem)
                 
                 //Save Array With UserDefault
@@ -136,6 +142,9 @@ class TodoListViewController: UITableViewController {
      //MARK: - Load Items
     
     func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()){
+        
+        let predicate = NSPredicate(format: "parentCarItem.name MATCHES %@", selectedCategory!.name! )
+        request.predicate = predicate
         
         do{
             itemArray = try context.fetch(request)
